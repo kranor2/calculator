@@ -2,11 +2,86 @@
 <html lang="en-us">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
         <title>kranor2 | Calculator</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <h1>Calculator</h1>
+
+        <div class="container">
+            <div class="screen">
+                0
+            </div>
+
+            <div class="math-buttons">
+                <div class="math-button-row" id="top-row">
+                    <button class="math-button" id="clear-button">
+                        AC
+                    </button>    
+                    <button class="math-button" id="backspace">
+                        C
+                    </button>
+                    <button class="math-button" id="divide">
+                        &divide;
+                    </button>            
+                </div>
+
+                <div class="math-button-row">
+                    <button class="num-button">
+                        7
+                    </button>
+                    <button class="num-button">
+                        8
+                    </button>
+                    <button class="num-button">
+                        9
+                    </button>
+                    <button class="math-button" id="multiply">
+                        &times;
+                    </button>
+                </div>
+
+                <div class="math-button-row">
+                    <button class="num-button">
+                        4
+                    </button>
+                    <button class="num-button">
+                        5
+                    </button>
+                    <button class="num-button">
+                        6
+                    </button>
+                    <button class="math-button">
+                        &minus;
+                    </button>
+                </div>
+                
+                <div class="math-button-row">
+                    <button class="num-button">
+                        1
+                    </button>
+                    <button class="num-button">
+                        2
+                    </button>
+                    <button class="num-button">
+                        3
+                    </button>
+                    <button class="math-button">
+                        &plus;
+                    </button>
+                </div>
+
+                <div class="math-button-row" id="bottom-row">
+                    <button class="num-button">
+                        0
+                    </button>
+                    <button class="math-button">
+                        &equals;
+                    </button>
+                </div>
+            </div>
+        </div>
         <script src="app.js"></script>
     </body>
 </html>
