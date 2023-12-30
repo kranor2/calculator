@@ -41,7 +41,7 @@ numButtons.forEach((button) => {
                 clearState = false;
                 equalityPressed = false;
             }
-            display.textcontent = display.textContent + button.textContent;
+            display.textContent = display.textContent + button.textContent;
             displayValue = display.textContent;
             if (numOne !== undefined) numTwo = displayValue;
             lengthOkay = false;
