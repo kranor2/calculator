@@ -10,13 +10,13 @@ let equalityPressed = false;
 let decPressed = false;
 
 function operate(numOne, numTwo, operator) {
-    if (operator === "&plus") {
+    if (operator === "+") {
         return Number(numOne) + Number(numTwo);
-    } else if (operator === "&minus") {
+    } else if (operator === "−") {
         return Number(numOne) - Number(numTwo);
-    } else if (operator === "&times") {
+    } else if (operator === "×") {
         return Number(numOne) * Number(numTwo);
-    } else if (operator === "&divide") {
+    } else if (operator === "÷") {
         return Number(numOne) / Number(numTwo);
     };
 };
@@ -31,7 +31,7 @@ function checkDisplay() {
     };
 };
 
-let numButtons = document.querySelectorAll(".number");
+let numButtons = document.querySelectorAll(".num-button");
 numButtons.forEach((button) => {
     button.addEventListener("click", () => {
         if (checkDisplay()) {
@@ -63,7 +63,7 @@ operatorButtons.forEach((button) => {
             displayValue = display.textContent;
         }
         numOne = displayValue;
-        if (button.textContent !== "&equals") {
+        if (button.textContent !== "=") {
             operator = button.textContent;
             operatorPressed = true;
         } else if (button.textContent) {
@@ -87,7 +87,7 @@ clearButton.addEventListener("click", () => {
 });
 
 let backspaceButton = document.querySelector("#backspace");
-backSpaceButton.addEventListener("click", () => {
+backspaceButton.addEventListener("click", () => {
     if (display.textContent.length > 1) {
         display.textContent = display.textContent.substring(0, display.textContent.length-1);
         displayValue = display.textContent;
@@ -105,5 +105,6 @@ decButton.addEventListener("click", () => {
     if (!decPressed) {
         display.textContent = display.textContent + ".";
         decPressed = true;
-    }
-})
+    };
+});
+
