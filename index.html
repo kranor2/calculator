@@ -7,27 +7,28 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Calculator</h1>
+        <h1>Rhett's Calculator</h1>
 
         <div class="container">
             <div class="screen">
-                0
+                <div class="upper-screen">start</div>
+                <div class="main-screen">0</div>
             </div>
 
-            <div class="math-buttons">
-                <div class="math-button-row" id="top-row">
-                    <button class="math-button" id="clear-button">
+            <div class="buttons">
+                <div class="top-row">
+                    <button id="clear">
                         AC
                     </button>    
-                    <button class="math-button" id="backspace">
+                    <button id="backspace">
                         C
                     </button>
-                    <button class="math-button" id="divide">
+                    <button class="operator" id="divide">
                         &divide;
                     </button>            
                 </div>
 
-                <div class="math-button-row">
+                <div class="second-row">
                     <button class="num-button">
                         7
                     </button>
@@ -37,12 +38,12 @@
                     <button class="num-button">
                         9
                     </button>
-                    <button class="math-button" id="multiply">
+                    <button class="operator" id="multiply">
                         &times;
                     </button>
                 </div>
 
-                <div class="math-button-row">
+                <div class="third-row">
                     <button class="num-button">
                         4
                     </button>
@@ -52,12 +53,12 @@
                     <button class="num-button">
                         6
                     </button>
-                    <button class="math-button">
+                    <button class="operator" id="subtract">
                         &minus;
                     </button>
                 </div>
                 
-                <div class="math-button-row">
+                <div class="fourth-row">
                     <button class="num-button">
                         1
                     </button>
@@ -67,16 +68,19 @@
                     <button class="num-button">
                         3
                     </button>
-                    <button class="math-button">
+                    <button class="operator" id="add">
                         &plus;
                     </button>
                 </div>
 
-                <div class="math-button-row" id="bottom-row">
+                <div class="bottom-row">
                     <button class="num-button">
                         0
                     </button>
-                    <button class="math-button">
+                    <button id="decimal">
+                        .
+                    </button>
+                    <button class="operator" id="equal">
                         &equals;
                     </button>
                 </div>
