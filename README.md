@@ -10,8 +10,8 @@ This project has served to grow my interest in JavaScript, which I plan to conti
 
 ## Thanks
 
-(W3Schools.com - Button Animation Doc)[https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate3]
+[W3Schools.com - Button Animation Doc](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate3)
 
 Google Fonts - Koulen, DotGothic16
 
-(Contrast Finder - Color Contrasting Tool for Web Accessibility)[https://app.contrast-finder.org/?lang=en]
+[Contrast Finder - Color Contrasting Tool for Web Accessibility](https://app.contrast-finder.org/?lang=en)
