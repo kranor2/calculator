@@ -65,14 +65,18 @@ function backspace() {
         if (numOne.length >= 1) {
             numOne = numOne.substring(0, numOne.length - 1);
             currentText.textContent = numOne;
-        }
+        } else if (numOne.length < 1) {
+            currentText.textContent = "0";
+        }    
     } else {
         if (numTwo.length >= 1) {
             numTwo = numTwo.substring(0, numTwo.length - 1);
             currentText.textContent - numTwo;
+        } else if (numTwo.length < 1) {
+            currentText.textContent = "0";
         }
     }
-}
+}    
 backspaceButton.addEventListener("click", () => {
     backspace();
 });

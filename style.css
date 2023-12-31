@@ -14,7 +14,22 @@ button {
     background-color: #CAB1AB;
     font-family: "Koulen", sans-serif;
     font-size: 32px;
+    text-align: center;
     margin: 8px;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 9px #767272;
+}
+
+button:hover {
+    background-color: #ADE6E4;
+}
+
+button:active {
+    background-color: #FCC4B4;
+    box-shadow: 0 5px #414040;
+    transform: translateY(4px);
 }
 
 .container {
@@ -58,7 +73,7 @@ button {
 
 .buttons {
     display: flex;
-    padding-top: 24px;
+    padding-top: 16px;
     flex-direction: column;
     align-items: center;
 }
