@@ -83,6 +83,7 @@ clearButton.addEventListener("click", () => {
     numTwo = "";
     output = "";
     solution = "";
+    currentText.style.fontSize = "40px";
     currentText.textContent = "0";
     upperScreenText.textContent = "start";
 });
