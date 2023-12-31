@@ -97,12 +97,12 @@ function operate() {
     currentText.textContent = solution;
     numOne = solution.toString();
     numTwo = "";
-}
+};
 function topOutput(operationSign, operationName) {
     output = numOne + operationSign;
     upperScreenText.textContent = output;
     operator = operationName;
-}
+};
 function chooseOperation(operationSign, operationName) {
     if (numOne.length != 0 && (output === "" || (output != "" && numTwo.length === 0))) {
         topOutput(operationSign, operationName);
@@ -110,4 +110,24 @@ function chooseOperation(operationSign, operationName) {
         operate();
         topOutput(operationSign, operationName);
     }
-}
+};
+
+const plusButton = document.getElementById("add");
+plusButton.addEventListener("click", () => {
+    chooseOperation (" + ", "+");
+});
+
+const minusButton = document.getElementById("subtract");
+minusButton.addEventListener("click", () => {
+    chooseOperation(" − ", "−")
+});
+
+const timesButton = document.getElementById("multiply");
+timesButton.addEventListener("click", () => {
+    chooseOperation(" × ", "×");
+});
+
+const divideButton = document.getElementById("divide");
+divideButton.addEventListener("click", () => {
+    chooseOperation(" ÷ ", "÷");
+});
