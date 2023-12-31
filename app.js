@@ -93,7 +93,7 @@ function operate() {
     } else if (operator === "÷") {
         solution = Number(numOne) / Number(numTwo);
     }
-    result = parseFloat(solution.toFixed(2));
+    solution = parseFloat(solution.toFixed(2));
     currentText.textContent = solution;
     numOne = solution.toString();
     numTwo = "";
@@ -130,4 +130,66 @@ timesButton.addEventListener("click", () => {
 const divideButton = document.getElementById("divide");
 divideButton.addEventListener("click", () => {
     chooseOperation(" ÷ ", "÷");
+});
+
+function getSolution() {
+    if (numOne.length != 0 && numTwo.length != 0 && output.charAt(output.length - 2) != "=") {
+        output += numTwo + " = ";
+        operate();
+        operation = "";
+        upperScreenText.textContent = output;
+    }
+}
+const equalsButton = document.getElementById("equal");
+equalsButton.addEventListener("click", () => {
+    getSolution();
+});
+
+document.addEventListener("keydown", (event) => {
+    if (numbers.includes(event.key)) {
+        if (output === "") {
+            numOne += event.key;
+            if (numOne.length >= 12) {
+                currentText.textContent = "Too big. Try again.";
+                numOne = "";
+            } else {
+                currentText.textContent = numOne;
+            }
+        } else if (output.charAt(output.length - 2) == "=") {
+            numOne = "";
+            numOne += event.key;
+            currentText.textContent = numOne;
+            output = "";
+            upperScreenText.textContent = output;
+        } else {
+            numTwo += event.key;
+            if (numTwo.length >= 12) {
+                currentText.textContent = "Too big. Try again.";
+                numTwo = "";
+            } else {
+                currentText.textContent = numTwo;
+            }
+        } 
+    } else if (event.key === ".") {
+        useDecimal();
+    } else if (event.key === "Backspace") {
+        backspace();
+    } else if (event.key === "Delete") {
+        numOne = "";
+        numTwo = "";
+        output = "";
+        solution = "";
+        upperScreenText = "";
+        currentText = "";
+    } else if (event.key === "+") {
+        chooseOperation (" + ", "+");
+    } else if (event.key === "-") {
+        chooseOperation(" − ", "−")
+    } else if (event.key === "*") {
+        chooseOperation(" × ", "×");
+    } else if (event.key === "/") {
+        chooseOperation(" ÷ ", "÷");
+    } else if (event.key === "=" || event.key === "Enter") {
+        getSolution();
+    }
 });
