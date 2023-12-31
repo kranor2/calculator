@@ -1,110 +1,26 @@
 let display = document.querySelector(".main-screen");
-let displayValue;
-let numOne;
-let numTwo;
-let operator;
-let lengthOkay = false;
-let operatorPressed = false;
-let clearState = false;
-let equalityPressed = false;
-let decPressed = false;
+let numOne = "";
+let numTwo = "";
+let operator = "";
+let solution = 0;
+const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const numButtons = document.querySelector(".num-button");
+const upperScreenText = document.querySelector(".upper-screen");
+const currentText = document.querySelector(".main-screen");
 
-function operate(numOne, numTwo, operator) {
+function operate() {
     if (operator === "+") {
-        return Number(numOne) + Number(numTwo);
+        solution = Number(numOne) + Number(numTwo);
     } else if (operator === "−") {
-        return Number(numOne) - Number(numTwo);
+        solution = Number(numOne) - Number(numTwo);
     } else if (operator === "×") {
-        return Number(numOne) * Number(numTwo);
+        solution = Number(numOne) * Number(numTwo);
     } else if (operator === "÷") {
-        return Number(numOne) / Number(numTwo);
-    };
-};
-
-function checkDisplay() {
-    let displayLength = display.textContent.length;
-    if (displayLength >= 8 && lengthOkay === false) {
-        lengthOkay = false;
-        return lengthOkay;
-    } else {
-        return true;
-    };
-};
-
-let numButtons = document.querySelectorAll(".num-button");
-numButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        if (checkDisplay()) {
-            if (operatorPressed === true || clearState === true || equalityPressed === true) {
-                display.textContent = "";
-                operatorPressed = false;
-                clearState = false;
-                equalityPressed = false;
-            }
-            display.textContent = display.textContent + button.textContent;
-            displayValue = display.textContent;
-            if (numOne !== undefined) numTwo = displayValue;
-            lengthOkay = false;
-        };
-    }); 
-});
-
-let operatorButtons = document.querySelectorAll(".operator");
-operatorButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        if (numTwo !== undefined) {
-            let number;
-            if (String(operate(numOne, numTwo, operator)).length >= 8) {
-                number = operate(numOne, numTwo, operator).toExponential(3);
-            } else {
-                number = operate(numOne, numTwo, operator);
-            }
-            display.textContent = number;
-            displayValue = display.textContent;
-        }
-        numOne = displayValue;
-        if (button.textContent !== "=") {
-            operator = button.textContent;
-            operatorPressed = true;
-        } else if (button.textContent) {
-            numTwo = undefined;
-            numOne = undefined;
-            equalityPressed = true;
-        }
-        lengthOkay = true;
-        decPressed = false;
-    });
-});
-
-let clearButton = document.querySelector("#clear");
-clearButton.addEventListener("click", () => {
-    display.textContent = "0";
-    displayValue = display.textContent;
-    numOne = undefined;
-    numTwo = undefined;
-    clearState = true;
-    decPressed = false;
-});
-
-let backspaceButton = document.querySelector("#backspace");
-backspaceButton.addEventListener("click", () => {
-    if (display.textContent.length > 1) {
-        display.textContent = display.textContent.substring(0, display.textContent.length-1);
-        displayValue = display.textContent;
-    } else {
-        display.textContent = 0;
-        displayValue = display.textContent;
+        solution = Number(numOne) / Number(numTwo);
     }
-    if (!display.textContent.includes(".")) {
-        decPressed = false;
-    };
-});
-
-let decButton = document.querySelector("#decimal");
-decButton.addEventListener("click", () => {
-    if (!decPressed) {
-        display.textContent = display.textContent + ".";
-        decPressed = true;
-    };
-});
+    result = parseFloat(solution.toFixed(2));
+    currentText.textContent = solution;
+    numOne = solution.toString();
+    numTwo = "";
+};
 
