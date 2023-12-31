@@ -14,9 +14,11 @@ numButtons.forEach((button) => {
         if (output === "") {
             numOne += button.value;
             if (numOne.length >= 12) {
-                currentText.textContent = "Too big. Try again."
+                currentText.style.fontSize = "27px";
+                currentText.textContent = "Too big. Try again.";
                 numOne = "";
             } else {
+                currentText.style.fontSize = "40px";
                 currentText.textContent = numOne;
             }
         } else if (output.charAt(output.length-2) === "=") {
@@ -28,9 +30,11 @@ numButtons.forEach((button) => {
         } else {
             numTwo += button.value;
             if (numTwo.length >= 12) {
-                currentText.textContent = "Too bit. Try again."
+                currentText.style.fontSize = "27px";
+                currentText.textContent = "Too big. Try again.";
                 numTwo = "";
             } else {
+                currentText.style.fontSize = "40px";
                 currentText.textContent = numTwo;
             }
         }
@@ -94,7 +98,8 @@ function operate() {
         if (+numTwo != 0) {
             solution = +numOne / +numTwo;
         } else {
-            alert("Dividing by 0 is impossible. Try again.");
+            currentText.style.fontSize = "27px";
+            currentText.textContent = "Dividing by 0 is impossible.";
             solution = +numOne;
         }
     }
@@ -155,9 +160,11 @@ document.addEventListener("keydown", (event) => {
         if (output === "") {
             numOne += event.key;
             if (numOne.length >= 12) {
+                currentText.style.fontSize = "27px";
                 currentText.textContent = "Too big. Try again.";
                 numOne = "";
             } else {
+                currentText.style.fontSize = "40px";
                 currentText.textContent = numOne;
             }
         } else if (output.charAt(output.length - 2) == "=") {
@@ -169,9 +176,11 @@ document.addEventListener("keydown", (event) => {
         } else {
             numTwo += event.key;
             if (numTwo.length >= 12) {
+                currentText.style.fontSize = "27px";
                 currentText.textContent = "Too big. Try again.";
                 numTwo = "";
             } else {
+                currentText.style.fontSize = "40px";
                 currentText.textContent = numTwo;
             }
         } 
@@ -194,7 +203,7 @@ document.addEventListener("keydown", (event) => {
         chooseOperation(" × ", "×");
     } else if (event.key === "/") {
         chooseOperation(" ÷ ", "÷");
-    } else if (event.key === "=" || event.key === "Enter" || event.key === "Return") {
+    } else if (event.key === "=" || event.key == "Enter" || event.key == "Return") {
         getSolution();
     }
 });

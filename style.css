@@ -1,0 +1,56 @@
+body {
+    background-color: #CAB1AB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: "Koulen", sans-serif;
+}
+
+button {
+    background-color: #CAB1AB;
+    font-family: "Koulen", sans-serif;
+    font-size: 27px;
+}
+
+.container {
+    background-color: #820106;
+    width: 400px;
+    height: 500px;
+    border-radius: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.screen {
+    background-color: #CAB1AB;
+    font-family: "DotGothic16", sans-serif;
+    width: 400px;
+    height: 100px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.upper-screen {
+    font-size: 18px;
+    margin-right: 16px;
+    margin-top: 8px;
+}
+
+.main-screen {
+    font-size: 40px;
+    margin-right: 16px;
+    margin-bottom: 8px;
+}
