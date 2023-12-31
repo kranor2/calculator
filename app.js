@@ -79,8 +79,8 @@ clearButton.addEventListener("click", () => {
     numTwo = "";
     output = "";
     solution = "";
-    currentText.textContent = "";
-    upperScreenText.textContent = "";
+    currentText.textContent = "0";
+    upperScreenText.textContent = "start";
 });
 
 function operate() {
@@ -194,7 +194,7 @@ document.addEventListener("keydown", (event) => {
         chooseOperation(" × ", "×");
     } else if (event.key === "/") {
         chooseOperation(" ÷ ", "÷");
-    } else if (event.key === "=" || event.key === "Enter") {
+    } else if (event.key === "=" || event.key === "Enter" || event.key === "Return") {
         getSolution();
     }
 });
