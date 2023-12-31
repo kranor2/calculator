@@ -9,22 +9,6 @@ const numButtons = document.querySelector(".num-button");
 const upperScreenText = document.querySelector(".upper-screen");
 const currentText = document.querySelector(".main-screen");
 
-function operate() {
-    if (operator === "+") {
-        solution = Number(numOne) + Number(numTwo);
-    } else if (operator === "−") {
-        solution = Number(numOne) - Number(numTwo);
-    } else if (operator === "×") {
-        solution = Number(numOne) * Number(numTwo);
-    } else if (operator === "÷") {
-        solution = Number(numOne) / Number(numTwo);
-    }
-    result = parseFloat(solution.toFixed(2));
-    currentText.textContent = solution;
-    numOne = solution.toString();
-    numTwo = "";
-};
-
 numButtons.forEach((button) => {
     button.addEventListener("click", () => {
         if (output === "") {
@@ -53,7 +37,7 @@ numButtons.forEach((button) => {
     })
 });
 
-const decButton = document.getElementById("#decimal");
+const decButton = document.getElementById("decimal");
 function useDecimal() {
     if (output === "") {
         if (!numOne.includes(".") && numOne.length >= 1) {
@@ -71,7 +55,7 @@ dotButton.addEventListener("click", () => {
     useDecimal();
 });
 
-const backspaceButton = document.getElementById("#backspace");
+const backspaceButton = document.getElementById("backspace");
 function backspace() {
     if (output === "") {
         if (numOne.length >= 1) {
@@ -88,3 +72,29 @@ function backspace() {
 backspaceButton.addEventListener("click", () => {
     backspace();
 });
+
+const clearButton = document.getElementById("clear");
+clearButton.addEventListener("click", () => {
+    numOne = "";
+    numTwo = "";
+    output = "";
+    solution = "";
+    currentText.textContent = "";
+    upperScreenText.textContent = "";
+});
+
+function operate() {
+    if (operator === "+") {
+        solution = Number(numOne) + Number(numTwo);
+    } else if (operator === "−") {
+        solution = Number(numOne) - Number(numTwo);
+    } else if (operator === "×") {
+        solution = Number(numOne) * Number(numTwo);
+    } else if (operator === "÷") {
+        solution = Number(numOne) / Number(numTwo);
+    }
+    result = parseFloat(solution.toFixed(2));
+    currentText.textContent = solution;
+    numOne = solution.toString();
+    numTwo = "";
+};
