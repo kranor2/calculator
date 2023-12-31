@@ -202,7 +202,7 @@ document.addEventListener("keydown", (event) => {
         chooseOperation(" − ", "−")
     } else if (event.key === "*") {
         chooseOperation(" × ", "×");
-    } else if (event.key === "/") {
+    } else if (event.key == "/") {
         chooseOperation(" ÷ ", "÷");
     } else if (event.key === "=" || event.key == "Enter" || event.key == "Return") {
         getSolution();
