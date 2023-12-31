@@ -97,4 +97,17 @@ function operate() {
     currentText.textContent = solution;
     numOne = solution.toString();
     numTwo = "";
-};
+}
+function topOutput(operationSign, operationName) {
+    output = numOne + operationSign;
+    upperScreenText.textContent = output;
+    operator = operationName;
+}
+function chooseOperation(operationSign, operationName) {
+    if (numOne.length != 0 && (output === "" || (output != "" && numTwo.length === 0))) {
+        topOutput(operationSign, operationName);
+    } else if (numOne.length != 0 && numTwo.length != 0 && output != "") {
+        operate();
+        topOutput(operationSign, operationName);
+    }
+}
