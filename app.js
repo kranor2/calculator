@@ -52,3 +52,39 @@ numButtons.forEach((button) => {
         }
     })
 });
+
+const decButton = document.getElementById("#decimal");
+function useDecimal() {
+    if (output === "") {
+        if (!numOne.includes(".") && numOne.length >= 1) {
+            numOne += ".";
+            currentText.textContent = numOne;
+        }
+    } else {
+        if (!numTwo.includes(".") && numOne.length >= 1) {
+            numTwo += ".";
+            currentText.textContent = numTwo;
+        }
+    }
+}
+dotButton.addEventListener("click", () => {
+    useDecimal();
+});
+
+const backspaceButton = document.getElementById("#backspace");
+function backspace() {
+    if (output === "") {
+        if (numOne.length >= 1) {
+            numOne = numOne.substring(0, numOne.length - 1);
+            currentText.textContent = numOne;
+        }
+    } else {
+        if (numTwo.length >= 1) {
+            numTwo = numTwo.substring(0, numTwo.length - 1);
+            currentText.textContent - numTwo;
+        }
+    }
+}
+backspaceButton.addEventListener("click", () => {
+    backspace();
+});
