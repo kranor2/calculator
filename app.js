@@ -5,7 +5,7 @@ let operator = "";
 let output = "";
 let solution = 0;
 const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-const numButtons = document.querySelector(".num-button");
+const numButtons = document.querySelectorAll(".num-button");
 const upperScreenText = document.querySelector(".upper-screen");
 const currentText = document.querySelector(".main-screen");
 
@@ -51,7 +51,7 @@ function useDecimal() {
         }
     }
 }
-dotButton.addEventListener("click", () => {
+decButton.addEventListener("click", () => {
     useDecimal();
 });
 
