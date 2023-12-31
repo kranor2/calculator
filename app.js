@@ -85,13 +85,18 @@ clearButton.addEventListener("click", () => {
 
 function operate() {
     if (operator === "+") {
-        solution = Number(numOne) + Number(numTwo);
+        solution = +numOne + +numTwo;
     } else if (operator === "−") {
-        solution = Number(numOne) - Number(numTwo);
+        solution = +numOne - + numTwo;
     } else if (operator === "×") {
-        solution = Number(numOne) * Number(numTwo);
+        solution = +numOne * +numTwo;
     } else if (operator === "÷") {
-        solution = Number(numOne) / Number(numTwo);
+        if (+numTwo != 0) {
+            solution = +numOne / +numTwo;
+        } else {
+            alert("Dividing by 0 is impossible. Try again.");
+            solution = +numOne;
+        }
     }
     solution = parseFloat(solution.toFixed(2));
     currentText.textContent = solution;
@@ -136,7 +141,7 @@ function getSolution() {
     if (numOne.length != 0 && numTwo.length != 0 && output.charAt(output.length - 2) != "=") {
         output += numTwo + " = ";
         operate();
-        operation = "";
+        operator = "";
         upperScreenText.textContent = output;
     }
 }
